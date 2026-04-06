@@ -31,7 +31,7 @@
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: #fffdf7;
+      background: #f7f8fc;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -41,8 +41,8 @@
     .spinner {
       width: 48px;
       height: 48px;
-      border: 4px solid #e8d5a0;
-      border-top-color: #c9a84c;
+      border: 4px solid #a3b8d8;
+      border-top-color: #4361a8;
       border-radius: 50%;
       animation: spin 0.7s linear infinite;
     }
@@ -56,20 +56,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold: #c9a84c;
-      --gold-light: #e8d5a0;
-      --gold-dark: #a07e2e;
-      --cream: #faf6ed;
-      --warm-white: #fffdf7;
-      --charcoal: #2c2c2c;
-      --text: #3d3a35;
-      --text-light: #6b6560;
-      --accent: #8b5e3c;
-      --sage: #7a8f6e;
-      --board-light: #f0d9b5;
-      --board-dark: #b58863;
-      --shadow: rgba(60, 40, 10, 0.08);
-      --shadow-lg: rgba(60, 40, 10, 0.15);
+      --gold: #4361a8;
+      --gold-light: #a3b8d8;
+      --gold-dark: #2d4785;
+      --cream: #eef1f8;
+      --warm-white: #f7f8fc;
+      --charcoal: #1a2b57;
+      --text: #2c3e5a;
+      --text-light: #5a6b85;
+      --accent: #3955a5;
+      --sage: #4361a8;
+      --board-light: #e8edf6;
+      --board-dark: #5b76c7;
+      --shadow: rgba(30, 50, 100, 0.08);
+      --shadow-lg: rgba(30, 50, 100, 0.15);
     }
 
     html { scroll-behavior: smooth; }
@@ -134,9 +134,9 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(255, 253, 247, 0.92);
+      background: rgba(247, 248, 252, 0.92);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+      border-bottom: 1px solid rgba(67, 97, 168, 0.12);
       transition: box-shadow 0.3s;
     }
 
@@ -146,11 +146,12 @@
 
     .nav-inner {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      padding: 16px 24px;
+      padding: 12px 24px;
       max-width: 1200px;
       margin: 0 auto;
+      gap: 8px;
     }
 
     .nav-logo {
@@ -168,8 +169,9 @@
       font-family: 'Heebo', sans-serif;
     }
 
-    .nav-logo .chess-icon {
-      font-size: 1.6rem;
+    .nav-logo-img {
+      height: 200px;
+      width: auto;
     }
 
     .nav-links {
@@ -223,7 +225,7 @@
       align-items: center;
       position: relative;
       overflow: hidden;
-      padding-top: 80px;
+      padding-top: 300px;
     }
 
     .hero::before {
@@ -233,7 +235,7 @@
       right: -200px;
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(67, 97, 168, 0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -258,7 +260,7 @@
 
     .hero-content {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.4fr 1fr;
       gap: 60px;
       align-items: center;
     }
@@ -269,8 +271,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.06));
-      border: 1px solid rgba(201, 168, 76, 0.2);
+      background: linear-gradient(135deg, rgba(67, 97, 168, 0.12), rgba(67, 97, 168, 0.06));
+      border: 1px solid rgba(67, 97, 168, 0.2);
       padding: 8px 18px;
       border-radius: 100px;
       font-size: 0.85rem;
@@ -280,6 +282,31 @@
     }
 
     .hero-title { margin-bottom: 20px; }
+
+    .hero-small {
+      font-size: 0.6em;
+      font-weight: 600;
+    }
+
+    .hero-title {
+      position: relative;
+      left: -70px;
+    }
+
+    .hero-line2 {
+      position: relative;
+      left: 140px;
+    }
+
+    body.rtl .hero-title {
+      left: auto;
+      right: auto;
+    }
+
+    body.rtl .hero-line2 {
+      left: auto;
+      right: auto;
+    }
 
     .hero-title .highlight {
       color: var(--gold);
@@ -315,18 +342,18 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+      box-shadow: 0 4px 15px rgba(67, 97, 168, 0.3);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(201, 168, 76, 0.4);
+      box-shadow: 0 8px 25px rgba(67, 97, 168, 0.4);
     }
 
     .btn-secondary {
       background: transparent;
       color: var(--text);
-      border: 2px solid rgba(201, 168, 76, 0.3);
+      border: 2px solid rgba(67, 97, 168, 0.3);
       padding: 14px 32px;
       border-radius: 12px;
       font-size: 1rem;
@@ -341,7 +368,7 @@
 
     .btn-secondary:hover {
       border-color: var(--gold);
-      background: rgba(201, 168, 76, 0.05);
+      background: rgba(67, 97, 168, 0.05);
     }
 
     .hero-stats {
@@ -375,14 +402,14 @@
     }
 
     .chess-board-display {
-      width: 380px;
-      height: 380px;
+      width: 320px;
+      height: 320px;
       display: grid;
       grid-template-columns: repeat(8, 1fr);
       grid-template-rows: repeat(8, 1fr);
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 20px 60px var(--shadow-lg), 0 0 0 4px rgba(201, 168, 76, 0.15);
+      box-shadow: 0 20px 60px var(--shadow-lg), 0 0 0 4px rgba(67, 97, 168, 0.15);
       transform: perspective(800px) rotateY(-5deg) rotateX(5deg);
       transition: transform 0.5s;
     }
@@ -444,7 +471,7 @@
     }
 
     .floating-badge .badge-icon.zoom { background: rgba(45, 140, 255, 0.1); }
-    .floating-badge .badge-icon.group { background: rgba(122, 143, 110, 0.15); }
+    .floating-badge .badge-icon.group { background: rgba(67, 97, 168, 0.12); }
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
@@ -467,16 +494,13 @@
 
     .about-image-placeholder {
       width: 100%;
-      aspect-ratio: 4/5;
-      background: linear-gradient(135deg, var(--board-light), var(--board-dark));
+      aspect-ratio: 1149/1638;
       border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 6rem;
+      object-fit: cover;
       box-shadow: 0 20px 60px var(--shadow-lg);
       position: relative;
       overflow: hidden;
+      display: block;
     }
 
     .about-image-placeholder::after {
@@ -681,7 +705,7 @@
     .service-icon {
       width: 64px;
       height: 64px;
-      background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.04));
+      background: linear-gradient(135deg, rgba(67, 97, 168, 0.12), rgba(67, 97, 168, 0.04));
       border-radius: 18px;
       display: flex;
       align-items: center;
@@ -867,7 +891,7 @@
 
     /* ===== CTA SECTION ===== */
     .cta-section {
-      background: linear-gradient(135deg, var(--charcoal) 0%, #1a1a1a 100%);
+      background: linear-gradient(135deg, var(--charcoal) 0%, #0f1d3d 100%);
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -880,7 +904,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: radial-gradient(ellipse at center, rgba(201, 168, 76, 0.1) 0%, transparent 60%);
+      background: radial-gradient(ellipse at center, rgba(67, 97, 168, 0.15) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -901,7 +925,7 @@
 
     /* ===== FOOTER ===== */
     footer {
-      background: #1a1a1a;
+      background: #0f1d3d;
       padding: 50px 0 30px;
       color: rgba(255, 255, 255, 0.5);
     }
@@ -922,6 +946,11 @@
       display: flex;
       align-items: center;
       gap: 8px;
+    }
+
+    .footer-logo-img {
+      height: 60px;
+      width: auto;
     }
 
     body.rtl .footer-logo {
@@ -952,6 +981,64 @@
       font-size: 0.82rem;
     }
 
+    /* ===== VIDEO PLAYER ===== */
+    .video-wrap {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px var(--shadow);
+      aspect-ratio: 16/9;
+      background: var(--cream);
+      cursor: pointer;
+    }
+
+    .video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 3px solid white;
+      background: rgba(67, 97, 168, 0.75);
+      color: white;
+      font-size: 2.2rem;
+      cursor: pointer;
+      transition: opacity 0.3s, transform 0.3s, background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(4px);
+      padding-left: 4px;
+    }
+
+    .video-play-btn:hover {
+      transform: translate(-50%, -50%) scale(1.12);
+      background: rgba(67, 97, 168, 0.9);
+    }
+
+    .video-wrap.playing .video-play-btn {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0.8);
+      padding-left: 0;
+    }
+
+    .video-wrap.playing:hover .video-play-btn {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 960px) {
       .hero-content {
@@ -976,6 +1063,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .services-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
+      .video-testimonials { grid-template-columns: 1fr !important; }
       .steps-grid { grid-template-columns: 1fr; gap: 20px; }
     }
 
@@ -989,11 +1077,11 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(255, 253, 247, 0.98);
+        background: rgba(247, 248, 252, 0.98);
         backdrop-filter: blur(20px);
         padding: 20px 24px;
         gap: 16px;
-        border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+        border-bottom: 1px solid rgba(67, 97, 168, 0.12);
         transform: translateY(-10px);
         opacity: 0;
         pointer-events: none;
@@ -1073,8 +1161,7 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <span class="chess-icon">&#9822;</span>
-        <span id="nav-brand">Yalla-Chess</span>
+        <img src="logo.png" alt="Yalla-Chess" class="nav-logo-img">
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about" id="nav-about">About Dolev</a></li>
@@ -1091,18 +1178,15 @@
   <section class="hero" id="hero">
     <div class="hero-board-pattern" id="heroBgPattern"></div>
     <div class="container">
+      <h1 class="hero-title" id="heroTitle" style="text-align:center; margin-bottom:40px;">
+        <span class="hero-small">Turn</span> Screen Time<br><span class="hero-line2"><span class="hero-small">into</span> <span class="highlight" id="heroHighlight">Thinking Time</span></span>
+      </h1>
       <div class="hero-content">
         <div class="hero-text">
-          <div class="hero-badge" id="heroBadge">
-            <span>&#9813;</span> <span id="badgeText">Small Group Chess Mastery</span>
-          </div>
-          <h1 class="hero-title" id="heroTitle">
-            Master Chess<br><span class="highlight" id="heroHighlight">Together</span>
-          </h1>
           <p class="hero-desc" id="heroDesc">
-            Join intimate groups of up to 5 students for personalized online chess training.
-            Learn strategy, sharpen your mind, and become part of a community that values
-            the wisdom of the game.
+            Small online chess groups (2–5 students)
+            that build focus, confidence, and strategic thinking —
+            in a fun, engaging environment.
           </p>
           <div class="hero-ctas">
             <a href="#services" class="btn-primary" id="heroCta1">
@@ -1114,16 +1198,12 @@
           </div>
           <div class="hero-stats">
             <div class="stat-item">
-              <div class="stat-num">500+</div>
+              <div class="stat-num">100+</div>
               <div class="stat-label" id="stat1Label">Students Taught</div>
             </div>
             <div class="stat-item">
               <div class="stat-num">5</div>
               <div class="stat-label" id="stat2Label">Max Group Size</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">98%</div>
-              <div class="stat-label" id="stat3Label">Return Rate</div>
             </div>
           </div>
         </div>
@@ -1153,30 +1233,24 @@
     <div class="container">
       <div class="about-grid reveal">
         <div class="about-image-wrap">
-          <div class="about-image-placeholder">&#9812;</div>
-          <div class="about-detail">
-            <div class="years">10+</div>
-            <div class="years-label" id="aboutYearsLabel">Years of<br>Teaching</div>
-          </div>
+          <img src="dolev.jpeg" alt="Dolev - Chess Instructor" class="about-image-placeholder">
         </div>
         <div class="about-text">
           <div class="section-title" id="aboutTitle">Meet Dolev</div>
           <p id="aboutP1">
-            Chess is more than a game &mdash; it's a tradition of passing wisdom from one generation
-            to the next. Dolev brings years of competitive and teaching experience to every session,
-            creating an environment where learning feels like gathering around a table with friends.
+            A chess coach with over 10 years of experience teaching students of all ages and levels.
+            Dolev has taught private lessons, group classes, and school programs, and has played at leading clubs such as Haifa Chess Club and Los Angeles Chess Club.
           </p>
           <p id="aboutP2">
-            With a passion for making chess accessible and enjoyable, Dolev specializes in small group
-            instruction that builds not just better players, but sharper thinkers. Every lesson is crafted
-            to challenge and inspire, whether you're picking up your first pawn or preparing for tournament play.
+            With a US rating of around 1850 and a Chess.com rating of 2200, he combines strong chess knowledge with excellent teaching skills.
+            Dolev has taught over 100 students and is known for creating engaging, personalized lessons, in both English and Hebrew.
           </p>
           <div class="about-highlights">
             <div class="highlight-item">
-              <div class="hi-icon">&#127942;</div>
+              <div class="hi-icon">&#9813;</div>
               <div>
-                <div class="hi-text" id="hi1Text">Tournament Experience</div>
-                <div class="hi-sub" id="hi1Sub">Nationally ranked player</div>
+                <div class="hi-text" id="hi1Text">10+ Years of Teaching</div>
+                <div class="hi-sub" id="hi1Sub">In English and Hebrew</div>
               </div>
             </div>
             <div class="highlight-item">
@@ -1197,7 +1271,7 @@
               <div class="hi-icon">&#127757;</div>
               <div>
                 <div class="hi-text" id="hi4Text">Global Community</div>
-                <div class="hi-sub" id="hi4Sub">Students across time zones</div>
+                <div class="hi-sub" id="hi4Sub">Students from all over the globe</div>
               </div>
             </div>
           </div>
@@ -1214,18 +1288,18 @@
       <div class="steps-grid">
         <div class="step-card reveal">
           <div class="step-num">1</div>
-          <h3 id="step1Title">Book a Trial</h3>
-          <p id="step1Desc">Schedule a free introductory session. We'll assess your level and find the right group for you.</p>
+          <h3 id="step1Title">Find the Right Group</h3>
+          <p id="step1Desc">We start by asking a few questions to assess your child's level, age, and availability and match them with the most suitable group.</p>
         </div>
         <div class="step-card reveal">
           <div class="step-num">2</div>
-          <h3 id="step2Title">Join Your Group</h3>
-          <p id="step2Desc">Get matched with 2-4 other players at your skill level. Your group becomes your chess family.</p>
+          <h3 id="step2Title">Join a Trial Lesson</h3>
+          <p id="step2Desc">Your child joins a real group lesson to experience the class, meet the students, and see if it's the right fit.</p>
         </div>
         <div class="step-card reveal">
           <div class="step-num">3</div>
-          <h3 id="step3Title">Grow Together</h3>
-          <p id="step3Desc">Weekly sessions on Zoom with personalized feedback, puzzles, and game analysis. Watch your rating climb.</p>
+          <h3 id="step3Title">Keep Growing</h3>
+          <p id="step3Desc">Weekly Zoom lessons with personal feedback, puzzles, and game analysis, helping your child build real skills and confidence.</p>
         </div>
       </div>
     </div>
@@ -1241,9 +1315,8 @@
           <div class="popular-tag" id="popularTag">Most Popular</div>
           <div class="service-icon">&#9823;&#9823;</div>
           <h3 id="svc1Title">Group Sessions</h3>
-          <div class="service-price" id="svc1Price">From $30 / session per student</div>
           <p id="svc1Desc">
-            Our signature small-group format. Learn alongside peers, practice together,
+            Our signature small-group format. Learn alongside friends, practice together,
             and build lasting connections over the board.
           </p>
           <ul class="service-features">
@@ -1258,7 +1331,6 @@
         <div class="service-card reveal">
           <div class="service-icon">&#9812;</div>
           <h3 id="svc2Title">Private Lessons</h3>
-          <div class="service-price" id="svc2Price">From $60 / session</div>
           <p id="svc2Desc">
             One-on-one attention for accelerated improvement. Ideal for serious competitors
             or anyone who wants fully personalized coaching.
@@ -1276,6 +1348,63 @@
     </div>
   </section>
 
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title reveal" style="text-align:center;" id="testimonialsTitle">What Parents & Students Say</div>
+      <div class="section-subtitle reveal" style="text-align:center;" id="testimonialsSubtitle">Hear from our community.</div>
+
+      <!-- Video testimonials -->
+      <div class="video-testimonials reveal" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:28px; margin-bottom:40px;">
+        <div class="video-wrap">
+          <video id="video1" muted playsinline onclick="toggleVideo('video1')"><source src="placeholder.mp4" type="video/mp4"></video>
+          <button class="video-play-btn" onclick="toggleVideo('video1')">&#9654;</button>
+        </div>
+        <div class="video-wrap">
+          <video id="video2" muted playsinline onclick="toggleVideo('video2')"><source src="placeholder.mp4" type="video/mp4"></video>
+          <button class="video-play-btn" onclick="toggleVideo('video2')">&#9654;</button>
+        </div>
+      </div>
+
+      <!-- Text testimonials -->
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote id="test1Quote">"My son looks forward to chess every week. Dolev makes it fun and challenging at the same time. He's improved so much and made real friends along the way."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">&#9823;</div>
+            <div>
+              <div class="author-name" id="test1Name">Rachel M.</div>
+              <div class="author-info" id="test1Info">Parent</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote id="test2Quote">"I started as a complete beginner. The small group format made it easy to learn without pressure. Now I play every day."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">&#9823;</div>
+            <div>
+              <div class="author-name" id="test2Name">David K.</div>
+              <div class="author-info" id="test2Info">Adult Student</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote id="test3Quote">"Dolev understood exactly where my daughter needed help and turned her weaknesses into strengths. She won three trophies this year!"</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">&#9823;</div>
+            <div>
+              <div class="author-name" id="test3Name">Sarah L.</div>
+              <div class="author-info" id="test3Info">Parent</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ -->
   <section class="faq" id="faq">
@@ -1299,10 +1428,10 @@
         </div>
         <div class="faq-item reveal">
           <button class="faq-question" onclick="toggleFaq(this)">
-            <span id="faq3Q">What platform do you use for lessons?</span>
+            <span id="faq3Q">Where do the lessons take place?</span>
             <span class="arrow">&#9660;</span>
           </button>
-          <div class="faq-answer"><p id="faq3A">All lessons are conducted via Zoom with screen sharing. We use chess platforms like Chess.com and Lichess for interactive play and analysis during sessions.</p></div>
+          <div class="faq-answer"><p id="faq3A">All lessons are held on Zoom with screen sharing. We use platforms like Chess.com and Lichess for interactive gameplay, practice, and real-time analysis during lessons.</p></div>
         </div>
         <div class="faq-item reveal">
           <button class="faq-question" onclick="toggleFaq(this)">
@@ -1310,20 +1439,6 @@
             <span class="arrow">&#9660;</span>
           </button>
           <div class="faq-answer"><p id="faq4A">During your free trial, we'll assess your playing level and preferences. We match groups by skill level, age range, and schedule compatibility to create the best learning environment.</p></div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            <span id="faq5Q">What if I need to miss a session?</span>
-            <span class="arrow">&#9660;</span>
-          </button>
-          <div class="faq-answer"><p id="faq5A">Life happens! We offer flexible scheduling and makeup sessions. Just let us know 24 hours in advance, and we'll work with you to find an alternative.</p></div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            <span id="faq6Q">Are sessions available on Sundays?</span>
-            <span class="arrow">&#9660;</span>
-          </button>
-          <div class="faq-answer"><p id="faq6A">Yes! Sunday sessions are actually our most popular time slot. We offer sessions throughout the week with evening and weekend availability to accommodate different schedules and time zones.</p></div>
         </div>
       </div>
     </div>
@@ -1333,8 +1448,8 @@
   <section class="cta-section" id="contact">
     <div class="container reveal" style="text-align:center;">
       <div class="section-title" id="ctaTitle">Ready to Make Your First Move?</div>
-      <div class="section-subtitle" id="ctaSubtitle">Book a free trial session and discover why hundreds of students choose to learn chess with Dolev.</div>
-      <a href="mailto:dolev@yallachess.com" class="btn-primary" id="ctaBtn">
+      <div class="section-subtitle" id="ctaSubtitle">Try a free lesson and take your game to the next level.</div>
+      <a href="https://wa.me/12133199230?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20trial%20lesson" target="_blank" class="btn-primary" id="ctaBtn">
         <span id="ctaBtnText">Book Your Free Trial</span> <span>&#9813;</span>
       </a>
       <div class="cta-note" id="ctaNote">No commitment required &middot; Cancel anytime</div>
@@ -1346,14 +1461,13 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-logo">
-          <span>&#9822;</span>
-          <span id="footer-brand">Yalla-Chess</span>
+          <img src="logo.png" alt="Yalla-Chess" class="footer-logo-img">
         </div>
         <ul class="footer-links">
           <li><a href="#about" id="foot-about">About</a></li>
           <li><a href="#services" id="foot-services">Programs</a></li>
           <li><a href="#faq" id="foot-faq">FAQ</a></li>
-          <li><a href="mailto:dolev@yallachess.com" id="foot-contact">Contact</a></li>
+          <li><a href="https://wa.me/12133199230" target="_blank" id="foot-contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-copy" id="footerCopy">
@@ -1422,6 +1536,47 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // ===== FAQ =====
+    // ===== VIDEO PLAYER =====
+    function toggleVideo(id) {
+      var video = document.getElementById(id);
+      var wrap = video.closest('.video-wrap');
+      var allVideos = document.querySelectorAll('.video-wrap video');
+
+      if (video.paused) {
+        // Pause all other videos
+        allVideos.forEach(function(v) {
+          if (v.id !== id && !v.paused) {
+            v.pause();
+            v.closest('.video-wrap').classList.remove('playing');
+            v.closest('.video-wrap').querySelector('.video-play-btn').innerHTML = '&#9654;';
+          }
+        });
+        video.play();
+        wrap.classList.add('playing');
+        wrap.querySelector('.video-play-btn').innerHTML = '&#9208;';
+      } else {
+        video.pause();
+        wrap.classList.remove('playing');
+        wrap.querySelector('.video-play-btn').innerHTML = '&#9654;';
+      }
+    }
+
+    function toggleMute(id) {
+      var video = document.getElementById(id);
+      var btn = video.closest('.video-wrap').querySelector('.video-mute-btn');
+      video.muted = !video.muted;
+      btn.innerHTML = video.muted ? '&#128263;' : '&#128266;';
+    }
+
+    // Reset play button when video ends
+    document.querySelectorAll('.video-wrap video').forEach(function(v) {
+      v.addEventListener('ended', function() {
+        var wrap = v.closest('.video-wrap');
+        wrap.classList.remove('playing');
+        wrap.querySelector('.video-play-btn').innerHTML = '&#9654;';
+      });
+    });
+
     function toggleFaq(btn) {
       const item = btn.parentElement;
       item.classList.toggle('open');
@@ -1463,43 +1618,42 @@
         navServices: 'תוכניות',
         navFaq: 'שאלות נפוצות',
         badgeText: 'שיעורי שחמט בקבוצות קטנות',
-        heroTitle: 'לומדים שחמט<br><span class="highlight">ביחד</span>',
-        heroDesc: 'הצטרפו לקבוצות אינטימיות של עד 5 תלמידים לאימון שחמט מקוון ואישי. למדו אסטרטגיה, חדדו את החשיבה, והפכו לחלק מקהילה שמעריכה את חוכמת המשחק.',
+        heroTitle: 'הפכו את זמן המסך<br><span class="hero-line2"><span class="highlight">לזמן חשיבה</span></span>',
+        heroDesc: 'קבוצות שחמט מקוונות קטנות (2–5 תלמידים) שמפתחות ריכוז, ביטחון עצמי וחשיבה אסטרטגית — בסביבה כיפית ומעניינת.',
         cta1Text: 'שיעור ניסיון חינם',
         cta2Text: 'הכירו את דולב',
         stat1Label: 'תלמידים',
         stat2Label: 'מקסימום בקבוצה',
-        stat3Label: 'חוזרים',
         floatBadge1Title: 'בזום',
         floatBadge1Sub: 'שיעורים אינטראקטיביים',
         floatBadge2Title: 'קבוצות קטנות',
         floatBadge2Sub: '2-5 תלמידים בקבוצה',
         aboutYearsLabel: 'שנות<br>הוראה',
         aboutTitle: 'הכירו את דולב',
-        aboutP1: 'שחמט הוא יותר ממשחק &mdash; זו מסורת של העברת חוכמה מדור לדור. דולב מביא שנים של ניסיון תחרותי והוראה לכל שיעור, ויוצר סביבה שבה הלמידה מרגישה כמו מפגש עם חברים סביב השולחן.',
-        aboutP2: 'עם תשוקה להנגשת השחמט והפיכתו למהנה, דולב מתמחה בהוראה בקבוצות קטנות שבונה לא רק שחקנים טובים יותר, אלא חושבים חדים יותר. כל שיעור מעוצב כדי לאתגר ולהשראה.',
-        hi1Text: 'ניסיון תחרותי',
-        hi1Sub: 'שחקן מדורג ארצית',
+        aboutP1: 'מאמן שחמט עם מעל 10 שנות ניסיון בלימוד תלמידים מכל הגילאים והרמות. דולב לימד שיעורים פרטיים, קבוצות ובתי ספר, ושיחק במועדוני שחמט מובילים כמו מועדון שחמט חיפה ומועדון שחמט לוס אנג\'לס.',
+        aboutP2: 'עם דירוג של כ-1850 בארה״ב וכ-2200 ב-Chess.com, הוא מביא שילוב של ידע מקצועי עמוק ויכולת הוראה מצוינת. דולב לימד מעל 100 תלמידים, ומתמחה ביצירת חוויית למידה אישית, מהנה ומקדמת, בעברית ובאנגלית.',
+        hi1Text: '+10 שנות הוראה',
+        hi1Sub: 'בעברית ובאנגלית',
         hi2Text: 'מדריך מוסמך',
         hi2Sub: 'חינוך שחמט מקצועי',
         hi3Text: 'לכל הגילאים',
         hi3Sub: 'ילדים ועד מבוגרים',
         hi4Text: 'קהילה גלובלית',
-        hi4Sub: 'תלמידים מכל הארץ',
+        hi4Sub: 'תלמידים מכל העולם',
         howTitle: 'איך זה עובד',
         howSubtitle: 'להתחיל זה פשוט. שלושה צעדים למהלך הראשון שלכם.',
-        step1Title: 'קבעו שיעור ניסיון',
-        step1Desc: 'תאמו שיעור היכרות חינמי. נעריך את הרמה שלכם ונמצא את הקבוצה המתאימה.',
-        step2Title: 'הצטרפו לקבוצה',
-        step2Desc: 'תותאמו ל-2-4 שחקנים נוספים ברמתכם. הקבוצה שלכם הופכת למשפחת השחמט שלכם.',
-        step3Title: 'גדלים ביחד',
-        step3Desc: 'שיעורים שבועיים בזום עם משוב אישי, חידות וניתוח משחקים. צפו בדירוג שלכם עולה.',
+        step1Title: 'מציאת קבוצה מתאימה',
+        step1Desc: 'נתחיל בכמה שאלות כדי להעריך את הרמה, הגיל והזמינות ונמצא לילד את הקבוצה המתאימה ביותר.',
+        step2Title: 'שיעור ניסיון בקבוצה',
+        step2Desc: 'הילד מצטרף לשיעור אמיתי בקבוצה כדי להכיר את הסגנון, התלמידים ולראות אם זה מתאים לו.',
+        step3Title: 'מתקדמים ונהנים',
+        step3Desc: 'שיעורים שבועיים בזום עם תרגול, ניתוח משחקים והכוונה אישית לפיתוח חשיבה, ריכוז וביטחון.',
         servicesTitle: 'בחרו את המסלול שלכם',
         servicesSubtitle: 'בין אם אתם מעדיפים ללמוד עם אחרים או באופן פרטי, יש תוכנית בשבילכם.',
         popularTag: 'הכי פופולרי',
         svc1Title: 'שיעורים קבוצתיים',
         svc1Price: 'החל מ-₪100 לשיעור לתלמיד',
-        svc1Desc: 'הפורמט הייחודי שלנו של קבוצות קטנות. למדו לצד עמיתים, תרגלו יחד, ובנו קשרים משמעותיים מעל הלוח.',
+        svc1Desc: 'הפורמט הייחודי שלנו של קבוצות קטנות. למדו לצד חברים, תרגלו יחד, ובנו קשרים משמעותיים מעל הלוח.',
         svc1f1: '2-5 תלמידים בקבוצה',
         svc1f2: 'שיעורים של 60 דקות בזום',
         svc1f3: 'התאמה לפי רמה וגיל',
@@ -1521,16 +1675,27 @@
         faq1A: 'אנחנו עובדים עם תלמידים מגיל 6 ועד מבוגרים. הקבוצות מותאמות בקפידה לפי גיל ורמה כדי שכולם ירגישו בנוח ויאותגרו.',
         faq2Q: 'האם צריך לדעת לשחק שחמט?',
         faq2A: 'בכלל לא! יש לנו קבוצות למתחילים מוחלטים. נלמד אתכם הכל מהבסיס של איך הכלים זזים ועד אסטרטגיה מתקדמת.',
-        faq3Q: 'באיזו פלטפורמה השיעורים?',
-        faq3A: 'כל השיעורים מתקיימים בזום עם שיתוף מסך. אנחנו משתמשים בפלטפורמות שחמט כמו Chess.com ו-Lichess למשחק אינטראקטיבי וניתוח במהלך השיעורים.',
+        faq3Q: 'איפה מתקיימים השיעורים?',
+        faq3A: 'השיעורים מתקיימים בזום עם שיתוף מסך, כך שכל תלמיד רואה, משתתף ומבין בזמן אמת. אנחנו עובדים עם Chess.com ו-Lichess כדי לאפשר משחקים אינטראקטיביים, תרגול חכם וניתוח מקצועי במהלך השיעור.',
         faq4Q: 'איך מתאימים קבוצות?',
         faq4A: 'במהלך שיעור הניסיון החינמי, נעריך את רמת המשחק וההעדפות שלכם. אנחנו מתאימים קבוצות לפי רמה, טווח גילאים ותיאום לוחות זמנים.',
         faq5Q: 'מה אם אני צריך לפספס שיעור?',
         faq5A: 'דברים קורים! אנחנו מציעים גמישות בתיאום ושיעורי השלמה. רק הודיעו לנו 24 שעות מראש ונמצא פתרון.',
         faq6Q: 'יש שיעורים בימי שישי?',
         faq6A: 'השיעורים מתקיימים בימים ראשון עד חמישי. אנחנו מציעים שיעורים לאורך השבוע עם זמינות בשעות אחר הצהריים והערב.',
+        testimonialsTitle: 'מה אומרים הורים ותלמידים',
+        testimonialsSubtitle: 'שומעים מהקהילה שלנו.',
+        test1Quote: '"הבן שלי מחכה לשיעור שחמט כל שבוע. דולב הופך את זה לכיפי ומאתגר בו זמנית. הוא השתפר מאוד ויצר חברויות אמיתיות."',
+        test1Name: 'רחל מ.',
+        test1Info: 'הורה',
+        test2Quote: '"התחלתי בתור מתחיל מוחלט. הפורמט של קבוצות קטנות עזר לי ללמוד בלי לחץ. היום אני משחק כל יום."',
+        test2Name: 'דוד כ.',
+        test2Info: 'תלמיד בוגר',
+        test3Quote: '"דולב הבין בדיוק איפה הבת שלי צריכה עזרה והפך חולשות לחוזקות. היא זכתה בשלושה גביעים השנה!"',
+        test3Name: 'שרה ל.',
+        test3Info: 'הורה',
         ctaTitle: 'מוכנים למהלך הראשון?',
-        ctaSubtitle: 'קבעו שיעור ניסיון חינם וגלו למה מאות תלמידים בוחרים ללמוד שחמט עם דולב.',
+        ctaSubtitle: 'נסו שיעור חינם וקחו את המשחק שלכם לשלב הבא.',
         ctaBtnText: 'קבעו שיעור ניסיון חינם',
         ctaNote: 'ללא התחייבות · ביטול בכל עת',
         footerBrand: 'משחקים שח עם דולב',
@@ -1555,28 +1720,25 @@
 
         // Update all content
         const c = content.he;
-        document.getElementById('nav-brand').textContent = c.navBrand;
+        // logo is an image, no text to set
         document.getElementById('langToggle').textContent = c.langToggle;
         document.getElementById('nav-about').textContent = c.navAbout;
         document.getElementById('nav-how').textContent = c.navHow;
         document.getElementById('nav-services').textContent = c.navServices;
         document.getElementById('nav-faq').textContent = c.navFaq;
-        document.getElementById('badgeText').textContent = c.badgeText;
         document.getElementById('heroTitle').innerHTML = c.heroTitle;
         document.getElementById('heroDesc').textContent = c.heroDesc;
         document.getElementById('cta1Text').textContent = c.cta1Text;
         document.getElementById('cta2Text').textContent = c.cta2Text;
         document.getElementById('stat1Label').textContent = c.stat1Label;
         document.getElementById('stat2Label').textContent = c.stat2Label;
-        document.getElementById('stat3Label').textContent = c.stat3Label;
         document.getElementById('floatBadge1Title').textContent = c.floatBadge1Title;
         document.getElementById('floatBadge1Sub').textContent = c.floatBadge1Sub;
         document.getElementById('floatBadge2Title').textContent = c.floatBadge2Title;
         document.getElementById('floatBadge2Sub').textContent = c.floatBadge2Sub;
-        document.getElementById('aboutYearsLabel').innerHTML = c.aboutYearsLabel;
         document.getElementById('aboutTitle').textContent = c.aboutTitle;
         document.getElementById('aboutP1').innerHTML = c.aboutP1;
-        document.getElementById('aboutP2').textContent = c.aboutP2;
+        document.getElementById('aboutP2').innerHTML = c.aboutP2;
         document.getElementById('hi1Text').textContent = c.hi1Text;
         document.getElementById('hi1Sub').textContent = c.hi1Sub;
         document.getElementById('hi2Text').textContent = c.hi2Text;
@@ -1597,7 +1759,6 @@
         document.getElementById('servicesSubtitle').textContent = c.servicesSubtitle;
         document.getElementById('popularTag').textContent = c.popularTag;
         document.getElementById('svc1Title').textContent = c.svc1Title;
-        document.getElementById('svc1Price').textContent = c.svc1Price;
         document.getElementById('svc1Desc').textContent = c.svc1Desc;
         document.getElementById('svc1f1').textContent = c.svc1f1;
         document.getElementById('svc1f2').textContent = c.svc1f2;
@@ -1606,7 +1767,6 @@
         document.getElementById('svc1f5').textContent = c.svc1f5;
         document.getElementById('svc1Btn').innerHTML = c.svc1Btn;
         document.getElementById('svc2Title').textContent = c.svc2Title;
-        document.getElementById('svc2Price').textContent = c.svc2Price;
         document.getElementById('svc2Desc').textContent = c.svc2Desc;
         document.getElementById('svc2f1').textContent = c.svc2f1;
         document.getElementById('svc2f2').textContent = c.svc2f2;
@@ -1614,6 +1774,17 @@
         document.getElementById('svc2f4').textContent = c.svc2f4;
         document.getElementById('svc2f5').textContent = c.svc2f5;
         document.getElementById('svc2Btn').innerHTML = c.svc2Btn;
+        document.getElementById('testimonialsTitle').textContent = c.testimonialsTitle;
+        document.getElementById('testimonialsSubtitle').textContent = c.testimonialsSubtitle;
+        document.getElementById('test1Quote').textContent = c.test1Quote;
+        document.getElementById('test1Name').textContent = c.test1Name;
+        document.getElementById('test1Info').textContent = c.test1Info;
+        document.getElementById('test2Quote').textContent = c.test2Quote;
+        document.getElementById('test2Name').textContent = c.test2Name;
+        document.getElementById('test2Info').textContent = c.test2Info;
+        document.getElementById('test3Quote').textContent = c.test3Quote;
+        document.getElementById('test3Name').textContent = c.test3Name;
+        document.getElementById('test3Info').textContent = c.test3Info;
         document.getElementById('faqTitle').textContent = c.faqTitle;
         document.getElementById('faqSubtitle').textContent = c.faqSubtitle;
         document.getElementById('faq1Q').textContent = c.faq1Q;
@@ -1624,15 +1795,11 @@
         document.getElementById('faq3A').textContent = c.faq3A;
         document.getElementById('faq4Q').textContent = c.faq4Q;
         document.getElementById('faq4A').textContent = c.faq4A;
-        document.getElementById('faq5Q').textContent = c.faq5Q;
-        document.getElementById('faq5A').textContent = c.faq5A;
-        document.getElementById('faq6Q').textContent = c.faq6Q;
-        document.getElementById('faq6A').textContent = c.faq6A;
         document.getElementById('ctaTitle').textContent = c.ctaTitle;
         document.getElementById('ctaSubtitle').textContent = c.ctaSubtitle;
         document.getElementById('ctaBtnText').textContent = c.ctaBtnText;
         document.getElementById('ctaNote').innerHTML = c.ctaNote;
-        document.getElementById('footer-brand').textContent = c.footerBrand;
+        // logo is an image, no text to set
         document.getElementById('foot-about').textContent = c.footAbout;
         document.getElementById('foot-services').textContent = c.footServices;
         document.getElementById('foot-faq').textContent = c.footFaq;
@@ -1645,50 +1812,46 @@
         document.documentElement.setAttribute('lang', 'en');
         document.title = 'Yalla-Chess | Learn Chess Together';
 
-        document.getElementById('nav-brand').textContent = 'Yalla-Chess';
+        // logo is an image, no text to set
         document.getElementById('langToggle').textContent = 'עברית';
         document.getElementById('nav-about').textContent = 'About Dolev';
         document.getElementById('nav-how').textContent = 'How It Works';
         document.getElementById('nav-services').textContent = 'Programs';
         document.getElementById('nav-faq').textContent = 'FAQ';
-        document.getElementById('badgeText').textContent = 'Small Group Chess Mastery';
-        document.getElementById('heroTitle').innerHTML = 'Master Chess<br><span class="highlight">Together</span>';
-        document.getElementById('heroDesc').textContent = 'Join intimate groups of up to 5 students for personalized online chess training. Learn strategy, sharpen your mind, and become part of a community that values the wisdom of the game.';
+        document.getElementById('heroTitle').innerHTML = '<span class="hero-small">Turn</span> Screen Time<br><span class="hero-line2"><span class="hero-small">into</span> <span class="highlight">Thinking Time</span></span>';
+        document.getElementById('heroDesc').textContent = 'Small online chess groups (2\u20135 students) that build focus, confidence, and strategic thinking \u2014 in a fun, engaging environment.';
         document.getElementById('cta1Text').textContent = 'Book a Free Trial';
         document.getElementById('cta2Text').textContent = 'Meet Dolev';
         document.getElementById('stat1Label').textContent = 'Students Taught';
         document.getElementById('stat2Label').textContent = 'Max Group Size';
-        document.getElementById('stat3Label').textContent = 'Return Rate';
         document.getElementById('floatBadge1Title').textContent = 'Live on Zoom';
         document.getElementById('floatBadge1Sub').textContent = 'Interactive sessions';
         document.getElementById('floatBadge2Title').textContent = 'Small Groups';
         document.getElementById('floatBadge2Sub').textContent = '2-5 students per group';
-        document.getElementById('aboutYearsLabel').innerHTML = 'Years of<br>Teaching';
         document.getElementById('aboutTitle').textContent = 'Meet Dolev';
-        document.getElementById('aboutP1').innerHTML = 'Chess is more than a game &mdash; it\'s a tradition of passing wisdom from one generation to the next. Dolev brings years of competitive and teaching experience to every session, creating an environment where learning feels like gathering around a table with friends.';
-        document.getElementById('aboutP2').textContent = 'With a passion for making chess accessible and enjoyable, Dolev specializes in small group instruction that builds not just better players, but sharper thinkers. Every lesson is crafted to challenge and inspire, whether you\'re picking up your first pawn or preparing for tournament play.';
-        document.getElementById('hi1Text').textContent = 'Tournament Experience';
-        document.getElementById('hi1Sub').textContent = 'Nationally ranked player';
+        document.getElementById('aboutP1').innerHTML = 'A chess coach with over 10 years of experience teaching students of all ages and levels. Dolev has taught private lessons, group classes, and school programs, and has played at leading clubs such as Haifa Chess Club and Los Angeles Chess Club.';
+        document.getElementById('aboutP2').innerHTML = 'With a US rating of around 1850 and a Chess.com rating of 2200, he combines strong chess knowledge with excellent teaching skills. Dolev has taught over 100 students and is known for creating engaging, personalized lessons, in both English and Hebrew.';
+        document.getElementById('hi1Text').textContent = '10+ Years of Teaching';
+        document.getElementById('hi1Sub').textContent = 'In English and Hebrew';
         document.getElementById('hi2Text').textContent = 'Certified Instructor';
         document.getElementById('hi2Sub').textContent = 'Professional chess education';
         document.getElementById('hi3Text').textContent = 'All Ages Welcome';
         document.getElementById('hi3Sub').textContent = 'Kids through adults';
         document.getElementById('hi4Text').textContent = 'Global Community';
-        document.getElementById('hi4Sub').textContent = 'Students across time zones';
+        document.getElementById('hi4Sub').textContent = 'Students from all over the globe';
         document.getElementById('howTitle').textContent = 'How It Works';
         document.getElementById('howSubtitle').textContent = 'Getting started is simple. Three steps to your first move.';
-        document.getElementById('step1Title').textContent = 'Book a Trial';
-        document.getElementById('step1Desc').textContent = 'Schedule a free introductory session. We\'ll assess your level and find the right group for you.';
-        document.getElementById('step2Title').textContent = 'Join Your Group';
-        document.getElementById('step2Desc').textContent = 'Get matched with 2-4 other players at your skill level. Your group becomes your chess family.';
-        document.getElementById('step3Title').textContent = 'Grow Together';
-        document.getElementById('step3Desc').textContent = 'Weekly sessions on Zoom with personalized feedback, puzzles, and game analysis. Watch your rating climb.';
+        document.getElementById('step1Title').textContent = 'Find the Right Group';
+        document.getElementById('step1Desc').textContent = 'We start by asking a few questions to assess your child\'s level, age, and availability and match them with the most suitable group.';
+        document.getElementById('step2Title').textContent = 'Join a Trial Lesson';
+        document.getElementById('step2Desc').textContent = 'Your child joins a real group lesson to experience the class, meet the students, and see if it\'s the right fit.';
+        document.getElementById('step3Title').textContent = 'Keep Growing';
+        document.getElementById('step3Desc').textContent = 'Weekly Zoom lessons with personal feedback, puzzles, and game analysis, helping your child build real skills and confidence.';
         document.getElementById('servicesTitle').textContent = 'Choose Your Path';
         document.getElementById('servicesSubtitle').textContent = 'Whether you learn best with others or one-on-one, there\'s a program for you.';
         document.getElementById('popularTag').textContent = 'Most Popular';
         document.getElementById('svc1Title').textContent = 'Group Sessions';
-        document.getElementById('svc1Price').textContent = 'From $30 / session per student';
-        document.getElementById('svc1Desc').textContent = 'Our signature small-group format. Learn alongside peers, practice together, and build lasting connections over the board.';
+        document.getElementById('svc1Desc').textContent = 'Our signature small-group format. Learn alongside friends, practice together, and build lasting connections over the board.';
         document.getElementById('svc1f1').textContent = '2-5 students per group';
         document.getElementById('svc1f2').textContent = '60-minute sessions on Zoom';
         document.getElementById('svc1f3').textContent = 'Matched by skill level & age';
@@ -1696,7 +1859,6 @@
         document.getElementById('svc1f5').textContent = 'Flexible scheduling';
         document.getElementById('svc1Btn').innerHTML = 'Join a Group <span>&#8594;</span>';
         document.getElementById('svc2Title').textContent = 'Private Lessons';
-        document.getElementById('svc2Price').textContent = 'From $60 / session';
         document.getElementById('svc2Desc').textContent = 'One-on-one attention for accelerated improvement. Ideal for serious competitors or anyone who wants fully personalized coaching.';
         document.getElementById('svc2f1').textContent = '1-on-1 with Dolev';
         document.getElementById('svc2f2').textContent = '45 or 60-minute sessions';
@@ -1704,36 +1866,32 @@
         document.getElementById('svc2f4').textContent = 'Game review & analysis';
         document.getElementById('svc2f5').textContent = 'Tournament preparation';
         document.getElementById('svc2Btn').innerHTML = 'Book Private Lesson <span>&#8594;</span>';
-        document.getElementById('testimonialsTitle').textContent = 'What Our Community Says';
-        document.getElementById('testimonialsSubtitle').textContent = 'Hear from students and parents who are part of the family.';
-        document.getElementById('test1Quote').textContent = '"My son looks forward to his chess group every week. Dolev makes it fun but also genuinely challenging. He\'s improved so much and made real friends along the way."';
+        document.getElementById('testimonialsTitle').textContent = 'What Parents & Students Say';
+        document.getElementById('testimonialsSubtitle').textContent = 'Hear from our community.';
+        document.getElementById('test1Quote').textContent = '"My son looks forward to chess every week. Dolev makes it fun and challenging at the same time. He\'s improved so much and made real friends along the way."';
         document.getElementById('test1Name').textContent = 'Rachel M.';
-        document.getElementById('test1Info').textContent = 'Parent, New Jersey';
-        document.getElementById('test2Quote').textContent = '"I was a complete beginner at 40. The small group format took away all the intimidation. Now I play every day and it\'s become my favorite way to unwind."';
+        document.getElementById('test1Info').textContent = 'Parent';
+        document.getElementById('test2Quote').textContent = '"I started as a complete beginner. The small group format made it easy to learn without pressure. Now I play every day."';
         document.getElementById('test2Name').textContent = 'David K.';
-        document.getElementById('test2Info').textContent = 'Adult Student, Brooklyn';
-        document.getElementById('test3Quote').textContent = '"Dolev understood exactly where my daughter was struggling and turned weaknesses into strengths. Her tournament results speak for themselves — three trophies this year!"';
+        document.getElementById('test2Info').textContent = 'Adult Student';
+        document.getElementById('test3Quote').textContent = '"Dolev understood exactly where my daughter needed help and turned her weaknesses into strengths. She won three trophies this year!"';
         document.getElementById('test3Name').textContent = 'Sarah L.';
-        document.getElementById('test3Info').textContent = 'Parent, Los Angeles';
+        document.getElementById('test3Info').textContent = 'Parent';
         document.getElementById('faqTitle').textContent = 'Frequently Asked Questions';
         document.getElementById('faqSubtitle').textContent = 'Everything you need to know before your first move.';
         document.getElementById('faq1Q').textContent = 'What ages do you teach?';
         document.getElementById('faq1A').textContent = 'We work with students from age 6 through adults. Groups are carefully matched by both age and skill level so everyone feels comfortable and challenged.';
         document.getElementById('faq2Q').textContent = 'Do I need to know how to play chess?';
         document.getElementById('faq2A').textContent = 'Not at all! We have groups for absolute beginners. We\'ll teach you everything from the basics of how the pieces move all the way through advanced strategy.';
-        document.getElementById('faq3Q').textContent = 'What platform do you use for lessons?';
-        document.getElementById('faq3A').textContent = 'All lessons are conducted via Zoom with screen sharing. We use chess platforms like Chess.com and Lichess for interactive play and analysis during sessions.';
+        document.getElementById('faq3Q').textContent = 'Where do the lessons take place?';
+        document.getElementById('faq3A').textContent = 'All lessons are held on Zoom with screen sharing. We use platforms like Chess.com and Lichess for interactive gameplay, practice, and real-time analysis during lessons.';
         document.getElementById('faq4Q').textContent = 'How are groups matched?';
         document.getElementById('faq4A').textContent = 'During your free trial, we\'ll assess your playing level and preferences. We match groups by skill level, age range, and schedule compatibility to create the best learning environment.';
-        document.getElementById('faq5Q').textContent = 'What if I need to miss a session?';
-        document.getElementById('faq5A').textContent = 'Life happens! We offer flexible scheduling and makeup sessions. Just let us know 24 hours in advance, and we\'ll work with you to find an alternative.';
-        document.getElementById('faq6Q').textContent = 'Are sessions available on Sundays?';
-        document.getElementById('faq6A').textContent = 'Yes! Sunday sessions are actually our most popular time slot. We offer sessions throughout the week with evening and weekend availability to accommodate different schedules and time zones.';
         document.getElementById('ctaTitle').textContent = 'Ready to Make Your First Move?';
-        document.getElementById('ctaSubtitle').textContent = 'Book a free trial session and discover why hundreds of students choose to learn chess with Dolev.';
+        document.getElementById('ctaSubtitle').textContent = 'Try a free lesson and take your game to the next level.';
         document.getElementById('ctaBtnText').textContent = 'Book Your Free Trial';
         document.getElementById('ctaNote').innerHTML = 'No commitment required &middot; Cancel anytime';
-        document.getElementById('footer-brand').textContent = 'Yalla-Chess';
+        // logo is an image, no text to set
         document.getElementById('foot-about').textContent = 'About';
         document.getElementById('foot-services').textContent = 'Programs';
         document.getElementById('foot-faq').textContent = 'FAQ';
@@ -1767,14 +1925,23 @@
     window.scrollTo(0, 0);
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
-    // Apply language detected in head script, then reveal
+    // Apply language detected in head script, then reveal after fonts are ready
     if (window.__initialLang === 'he') {
       setLang('he');
     }
-    var loader = document.getElementById('loader');
-    loader.classList.add('hide');
-    document.body.classList.add('ready');
-    loader.addEventListener('transitionend', function() { loader.remove(); });
+
+    function revealPage() {
+      var loader = document.getElementById('loader');
+      document.body.classList.add('ready');
+      loader.classList.add('hide');
+      loader.addEventListener('transitionend', function() { loader.remove(); });
+    }
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(revealPage);
+    } else {
+      revealPage();
+    }
   </script>
 
 </body>
