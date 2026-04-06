@@ -137,11 +137,22 @@
       background: rgba(247, 248, 252, 0.92);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(67, 97, 168, 0.12);
-      transition: box-shadow 0.3s;
+      transition: box-shadow 0.3s, padding 0.3s;
     }
 
     nav.scrolled {
       box-shadow: 0 2px 20px var(--shadow);
+    }
+
+    /* Mobile compact nav on scroll */
+    @media (max-width: 640px) {
+      nav.compact .nav-logo-img {
+        height: 50px;
+      }
+
+      nav.compact .nav-inner {
+        padding: 8px 16px;
+      }
     }
 
     .nav-inner {
@@ -152,6 +163,7 @@
       max-width: 1200px;
       margin: 0 auto;
       gap: 8px;
+      transition: padding 0.3s, gap 0.3s;
     }
 
     .nav-logo {
@@ -172,6 +184,7 @@
     .nav-logo-img {
       height: 200px;
       width: auto;
+      transition: height 0.3s;
     }
 
     .nav-links {
@@ -1095,9 +1108,20 @@
         visibility: visible;
       }
       .mobile-menu-btn { display: block; }
+      .nav-logo-img { transition: height 0.3s; }
+      .nav-inner {
+        flex-direction: column;
+        align-items: center;
+        transition: padding 0.3s;
+      }
+      nav.compact .nav-inner {
+        flex-direction: row;
+        justify-content: space-between;
+      }
       .about-highlights { grid-template-columns: 1fr; }
       .hero-stats { gap: 24px; }
-      .hero-title { font-size: 2rem; }
+      .hero-title { font-size: 2rem; left: 0; }
+      .hero-line2 { left: 0; }
       .hero-desc { font-size: 1rem; }
       .hero-badge { font-size: 0.78rem; padding: 6px 14px; }
 
@@ -1210,14 +1234,14 @@
         <div class="hero-visual">
           <div class="chess-board-display" id="chessBoard"></div>
           <div class="floating-badge top-right">
-            <div class="badge-icon zoom">&#128247;</div>
+            <div class="badge-icon zoom">💻</div>
             <div>
               <div style="font-weight:600;" id="floatBadge1Title">Live on Zoom</div>
               <div style="font-size:0.78rem;color:var(--text-light);" id="floatBadge1Sub">Interactive sessions</div>
             </div>
           </div>
           <div class="floating-badge bottom-left">
-            <div class="badge-icon group">&#9823;</div>
+            <div class="badge-icon group">👥</div>
             <div>
               <div style="font-weight:600;" id="floatBadge2Title">Small Groups</div>
               <div style="font-size:0.78rem;color:var(--text-light);" id="floatBadge2Sub">2-5 students per group</div>
@@ -1313,7 +1337,7 @@
       <div class="services-grid">
         <div class="service-card featured reveal">
           <div class="popular-tag" id="popularTag">Most Popular</div>
-          <div class="service-icon">&#9823;&#9823;</div>
+          <div class="service-icon">👥</div>
           <h3 id="svc1Title">Group Sessions</h3>
           <p id="svc1Desc">
             Our signature small-group format. Learn alongside friends, practice together,
@@ -1521,7 +1545,10 @@
 
     // ===== SCROLL NAV =====
     window.addEventListener('scroll', () => {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+      var nav = document.getElementById('navbar');
+      var scrolled = window.scrollY > 50;
+      nav.classList.toggle('scrolled', scrolled);
+      nav.classList.toggle('compact', scrolled && window.innerWidth <= 640);
     });
 
     // ===== REVEAL ANIMATION =====
